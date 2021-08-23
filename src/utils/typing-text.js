@@ -7,10 +7,12 @@ export default (room, currentUserId, textMessages) => {
 			return true
 		})
 
-		if (!typingUsers.length) return
+		if (!typingUsers.length) return false
 
 		if (room.users.length === 2) {
-			return textMessages.IS_TYPING
+      // Always this one in our case
+			// return textMessages.IS_TYPING
+      return true
 		} else {
 			return (
 				typingUsers.map(user => user.username).join(', ') +
@@ -19,4 +21,6 @@ export default (room, currentUserId, textMessages) => {
 			)
 		}
 	}
+
+	return false
 }

@@ -60,6 +60,8 @@ import SvgIcon from '../SvgIcon/SvgIcon'
 import formatString from '../../utils/format-string'
 import { IMAGE_TYPES } from '../../utils/constants'
 
+// TODO @eugene get typing text in here
+
 export default {
 	name: 'FormatMessage',
 	components: { SvgIcon },

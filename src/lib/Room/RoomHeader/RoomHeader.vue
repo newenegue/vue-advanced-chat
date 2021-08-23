@@ -1,6 +1,6 @@
 <template>
 	<div class="vac-room-header vac-app-border-b">
-		<slot name="room-header" v-bind="{ room, typingUsers, userStatus }">
+		<slot name="room-header" v-bind="{ room, userStatus }">
 			<div class="vac-room-wrapper">
 				<div
 					v-if="!singleRoom"
@@ -26,16 +26,17 @@
 					</slot>
 					<slot
 						name="room-header-info"
-						v-bind="{ room, typingUsers, userStatus }"
+						v-bind="{ room, userStatus }"
 					>
 						<div class="vac-text-ellipsis">
 							<div class="vac-room-name vac-text-ellipsis">
 								{{ room.roomName }}
 							</div>
-							<div v-if="typingUsers" class="vac-room-info vac-text-ellipsis">
-								{{ typingUsers }}
-							</div>
-							<div v-else class="vac-room-info vac-text-ellipsis">
+<!--							<div v-if="typingUsers" class="vac-room-info vac-text-ellipsis">-->
+<!--								{{ typingUsers }}-->
+<!--							</div>-->
+<!--							<div v-else class="vac-room-info vac-text-ellipsis">-->
+							<div class="vac-room-info vac-text-ellipsis">
 								{{ userStatus }}
 							</div>
 						</div>
@@ -109,9 +110,9 @@ export default {
 	},
 
 	computed: {
-		typingUsers() {
-			return typingText(this.room, this.currentUserId, this.textMessages)
-		},
+		// typingUsers() {
+		// 	return typingText(this.room, this.currentUserId, this.textMessages)
+		// },
 		userStatus() {
 			if (!this.room.users || this.room.users.length !== 2) return
 
