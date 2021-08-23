@@ -63,12 +63,6 @@
 							<slot name="deleted-icon" v-bind="data" />
 						</template>
 					</format-message>
-<!--					<div-->
-<!--						v-if="!room.lastMessage && typingUsers"-->
-<!--						class="vac-text-ellipsis"-->
-<!--					>-->
-<!--						{{ typingUsers }}-->
-<!--					</div>-->
 					<div class="vac-room-options-container">
 						<div
 							v-if="room.unreadCount"

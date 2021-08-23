@@ -32,10 +32,6 @@
 							<div class="vac-room-name vac-text-ellipsis">
 								{{ room.roomName }}
 							</div>
-<!--							<div v-if="typingUsers" class="vac-room-info vac-text-ellipsis">-->
-<!--								{{ typingUsers }}-->
-<!--							</div>-->
-<!--							<div v-else class="vac-room-info vac-text-ellipsis">-->
 							<div class="vac-room-info vac-text-ellipsis">
 								{{ userStatus }}
 							</div>
