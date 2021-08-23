@@ -75,6 +75,14 @@
 		}
 	}
 
+	.is-typing-text-no-ellipsis {
+		padding-left: 20px;
+		padding-top: 10px;
+		font-style: italic;
+		opacity: 0.6;
+		font-size: 14px;
+	}
+
 	.vac-text-started {
 		font-size: 14px;
 		color: var(--chat-message-color-started);

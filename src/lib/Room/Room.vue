@@ -101,10 +101,23 @@
 								</template>
 							</message>
 						</div>
-            <div v-if="typingUsers" :key="'is-typing-text'" class="is-typing-text">
-              {{ typingUsers }}
-            </div>
+
 					</transition-group>
+          <transition name="vac-fade-message">
+            <span v-if="typingUsers" class="is-typing-text">
+              {{ typingUsers }}
+            </span>
+          </transition>
+          <transition name="vac-fade-message">
+            <span v-if="typingUsers" class="is-typing-text">
+              Ricky is typing
+            </span>
+          </transition>
+          <transition name="vac-fade-message">
+            <span class="is-typing-text-no-ellipsis">
+              Jane is typing...
+            </span>
+          </transition>
 				</div>
 			</div>
 		</div>
