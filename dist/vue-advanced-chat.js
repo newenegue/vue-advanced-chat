@@ -11605,20 +11605,16 @@ var es_array_join = __webpack_require__("a15b");
       if (user.status && user.status.state === 'offline') return;
       return true;
     });
-    if (!typingUsers.length) return false;
+    if (!typingUsers.length) return;
 
     if (room.users.length === 2) {
-      // Always this one in our case
-      // return textMessages.IS_TYPING
-      return true;
+      return textMessages.IS_TYPING;
     } else {
       return typingUsers.map(function (user) {
         return user.username;
       }).join(', ') + ' ' + textMessages.IS_TYPING;
     }
   }
-
-  return false;
 });
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/RoomsList/RoomContent/RoomContent.vue?vue&type=script&lang=js&
 
