@@ -45,6 +45,36 @@
 		padding: 0 5px 5px;
 	}
 
+	.is-typing-text {
+		padding-left: 20px;
+		padding-top: 10px;
+		font-style: italic;
+		opacity: 0.6;
+		font-size: 14px;
+
+		&:after {
+			overflow: hidden;
+			display: inline-block;
+			vertical-align: bottom;
+			-webkit-animation: ellipsis steps(4,end) 1800ms infinite;
+			animation: ellipsis steps(4,end) 1800ms infinite;
+			content: "\2026"; /* ascii code for the ellipsis character */
+			width: 0;
+		}
+
+		@keyframes ellipsis {
+			to {
+				width: 20px;
+			}
+		}
+
+		@-webkit-keyframes ellipsis {
+			to {
+				width: 20px;
+			}
+		}
+	}
+
 	.vac-text-started {
 		font-size: 14px;
 		color: var(--chat-message-color-started);

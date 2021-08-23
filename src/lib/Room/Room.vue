@@ -101,8 +101,8 @@
 								</template>
 							</message>
 						</div>
-            <div :key="'is-typing-text'" class="is-typing-text">
-              TYPING TEXT: {{ typingUsers }}
+            <div v-if="typingUsers" :key="'is-typing-text'" class="is-typing-text">
+              {{ typingUsers }}
             </div>
 					</transition-group>
 				</div>

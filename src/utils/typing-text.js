@@ -10,7 +10,7 @@ export default (room, currentUserId, textMessages) => {
 		if (!typingUsers.length) return
 
 		if (room.users.length === 2) {
-			return textMessages.IS_TYPING
+			return `${typingUsers[0]} ${textMessages.IS_TYPING}`
 		} else {
 			return (
 				typingUsers.map(user => user.username).join(', ') +
