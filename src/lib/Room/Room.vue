@@ -454,8 +454,7 @@ export default {
 			)
 		},
     typingUsers() {
-      // return typingText(this.room, this.currentUserId, this.textMessages)
-      return 'Eugene is typing'
+      return typingText(this.room, this.currentUserId, this.textMessages)
     }
 	},
 
