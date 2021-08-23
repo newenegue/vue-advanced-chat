@@ -145,8 +145,8 @@ export default {
 
 	computed: {
 		getLastMessage() {
-			const isTyping = this.typingUsers
-			if (isTyping) return isTyping
+			// const isTyping = this.typingUsers
+			// if (isTyping) return isTyping
 
 			const content = this.room.lastMessage.deleted
 				? this.textMessages.MESSAGE_DELETED
