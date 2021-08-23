@@ -80,7 +80,7 @@
 								:messages="messages"
 								:edited-message="editedMessage"
 								:message-actions="messageActions"
-								:room-users="room.users"
+                :room-users="room.users"
 								:text-messages="textMessages"
 								:room-footer-ref="$refs.roomFooter"
 								:new-messages="newMessages"
@@ -101,6 +101,7 @@
 								</template>
 							</message>
 						</div>
+            <div v-if="typingUsers">{{ typingUsers }}</div>
 					</transition-group>
 				</div>
 			</div>
@@ -300,6 +301,7 @@ import RoomUsersTag from './RoomUsersTag/RoomUsersTag'
 import RoomEmojis from './RoomEmojis/RoomEmojis'
 import Message from '../Message/Message'
 
+import typingText from '../../utils/typing-text'
 import filteredUsers from '../../utils/filter-items'
 import Recorder from '../../utils/recorder'
 
@@ -445,7 +447,10 @@ export default {
 				!!this.files.length ||
 				!!this.messageReply
 			)
-		}
+		},
+    typingUsers() {
+      return typingText(this.room, this.currentUserId, this.textMessages)
+    }
 	},
 
 	watch: {
