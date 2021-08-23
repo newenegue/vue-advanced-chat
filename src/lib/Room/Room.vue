@@ -104,19 +104,9 @@
 
 					</transition-group>
           <transition name="vac-fade-message">
-            <span v-if="typingUsers" class="is-typing-text">
-              {{ typingUsers }}
-            </span>
-          </transition>
-          <transition name="vac-fade-message">
-            <span v-if="typingUsers" class="is-typing-text">
-              Ricky is typing
-            </span>
-          </transition>
-          <transition name="vac-fade-message">
-            <span class="is-typing-text-no-ellipsis">
-              Jane is typing...
-            </span>
+            <div v-if="typingUsers" class="is-typing-text">
+              {{ typingUsers }}<span class="one">.</span><span class="two">.</span><span class="three">.</span>
+            </div>
           </transition>
 				</div>
 			</div>

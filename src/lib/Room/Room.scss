@@ -52,25 +52,51 @@
 		opacity: 0.6;
 		font-size: 14px;
 
-		&:after {
-			overflow: hidden;
-			display: inline-block;
-			vertical-align: bottom;
-			-webkit-animation: ellipsis steps(4,end) 1800ms infinite;
-			animation: ellipsis steps(4,end) 1800ms infinite;
-			content: "\2026"; /* ascii code for the ellipsis character */
-			width: 0;
+		.one {
+			opacity: 0;
+			-webkit-animation: dot 1.3s infinite;
+			-webkit-animation-delay: 0.0s;
+			animation: dot 1.3s infinite;
+			animation-delay: 0.0s;
 		}
 
-		@keyframes ellipsis {
-			to {
-				width: 20px;
+		.two {
+			opacity: 0;
+			-webkit-animation: dot 1.3s infinite;
+			-webkit-animation-delay: 0.2s;
+			animation: dot 1.3s infinite;
+			animation-delay: 0.2s;
+		}
+
+		.three {
+			opacity: 0;
+			-webkit-animation: dot 1.3s infinite;
+			-webkit-animation-delay: 0.3s;
+			animation: dot 1.3s infinite;
+			animation-delay: 0.3s;
+		}
+
+		@-webkit-keyframes dot {
+			0% {
+				opacity: 0;
+			}
+			50% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
 			}
 		}
 
-		@-webkit-keyframes ellipsis {
-			to {
-				width: 20px;
+		@keyframes dot {
+			0% {
+				opacity: 0;
+			}
+			50% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
 			}
 		}
 	}
