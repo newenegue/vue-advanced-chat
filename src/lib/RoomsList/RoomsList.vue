@@ -54,8 +54,8 @@
 				</room-content>
 			</div>
 			<transition name="vac-fade-message">
-				<div v-if="rooms.length && !loadingRooms" id="infinite-loader">
-					<loader :show="showLoader" :infinite="true" />
+				<div id="infinite-loader">
+					<loader :show="false" :infinite="true" />
 				</div>
 			</transition>
 		</div>
