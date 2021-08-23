@@ -24,7 +24,7 @@
 					class="vac-text-last"
 					:class="{
 						'vac-message-new':
-							room.lastMessage && room.lastMessage.new
+							room.lastMessage && room.lastMessage.new && !typingUsers
 					}"
 				>
 					<span v-if="isMessageCheckmarkVisible">
@@ -52,7 +52,7 @@
 					<format-message
 						v-else-if="room.lastMessage"
 						:content="getLastMessage"
-						:deleted="!!room.lastMessage.deleted"
+						:deleted="!!room.lastMessage.deleted && !typingUsers"
 						:users="room.users"
 						:linkify="false"
 						:text-formatting="textFormatting"
@@ -151,8 +151,8 @@ export default {
 
 	computed: {
 		getLastMessage() {
-			// const isTyping = this.typingUsers
-			// if (isTyping) return isTyping
+			const isTyping = this.typingUsers
+			if (isTyping) return isTyping
 
 			const content = this.room.lastMessage.deleted
 				? this.textMessages.MESSAGE_DELETED
@@ -182,12 +182,12 @@ export default {
 
 			return null
 		},
-		// typingUsers() {
-		// 	return typingText(this.room, this.currentUserId, this.textMessages)
-		// },
+		typingUsers() {
+			return typingText(this.room, this.currentUserId, this.textMessages)
+		},
 		isMessageCheckmarkVisible() {
 			return (
-				// !this.typingUsers &&
+				!this.typingUsers &&
 				this.room.lastMessage &&
 				!this.room.lastMessage.deleted &&
 				this.room.lastMessage.senderId === this.currentUserId &&
