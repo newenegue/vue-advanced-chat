@@ -101,7 +101,7 @@
 								</template>
 							</message>
 						</div>
-            <div class="is-typing-text">
+            <div :key="'is-typing-text'" class="is-typing-text">
               TYPING TEXT: {{ typingUsers }}
             </div>
 					</transition-group>
