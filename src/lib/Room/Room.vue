@@ -103,11 +103,9 @@
 						</div>
 
 					</transition-group>
-          <transition name="vac-fade-message">
-            <div v-if="typingUsers" class="is-typing-text">
-              {{ typingUsers }}<span class="one">.</span><span class="two">.</span><span class="three">.</span>
-            </div>
-          </transition>
+          <div v-if="typingUsers" class="is-typing-text">
+            {{ typingUsers }}<span class="one">.</span><span class="two">.</span><span class="three">.</span>
+          </div>
 				</div>
 			</div>
 		</div>
@@ -454,7 +452,9 @@ export default {
 			)
 		},
     typingUsers() {
-      return typingText(this.room, this.currentUserId, this.textMessages)
+      const result = typingText(this.room, this.currentUserId, this.textMessages)
+      if (result) this.scrollToBottom()
+      return result
     }
 	},
 
