@@ -101,7 +101,6 @@
 								</template>
 							</message>
 						</div>
-
 					</transition-group>
           <div v-if="typingUsers" class="is-typing-text">
             {{ typingUsers }}<span class="one">.</span><span class="two">.</span><span class="three">.</span>
@@ -452,7 +451,8 @@ export default {
 			)
 		},
     typingUsers() {
-      const result = typingText(this.room, this.currentUserId, this.textMessages)
+      // const result = typingText(this.room, this.currentUserId, this.textMessages)
+      const result = 'Eugene is typing'
       if (result) this.scrollToBottom()
       return result
     }
